@@ -1,0 +1,83 @@
+{
+  "products": [
+    {
+      "id": "62aefe9ad8b80d5234af625a",
+      "image": "solarbulb.png",
+      "brand": "xioami",
+      "review": 3,
+      "title": "LED Solar Bulb 3W 12V DC",
+      "offer_price": "TZS5,000",
+      "price": "TZS10,000",
+      "campaingn_product": false,
+      "cam_product_available": null,
+      "cam_product_sale": null,
+      "product_type": null
+    },
+    {
+      "id": "62aefe9a17780a9e549646c2",
+      "image": "solarfreezer.png",
+      "brand": "apple",
+      "review": 5,
+      "title": "TB-35F Solar Freezer",
+      "offer_price": "TZS350,000",
+      "price": "TZS550,000",
+      "campaingn_product": true,
+      "cam_product_available": 20,
+      "cam_product_sale": 10,
+      "product_type": null
+    },
+    {
+      "id": "62aefe9af9a0e865ee49c99e",
+      "image": "solarinverter.png",
+      "brand": "apple",
+      "review": 5,
+      "title": "Pure Sine Wave Inverter 48V/12000w",
+      "offer_price": "TZS 4,000,000",
+      "price": "",
+      "campaingn_product": false,
+      "cam_product_available": null,
+      "cam_product_sale": null,
+      "product_type": "popular"
+    },
+    {
+      "id": "62aefe9a6e662e77accd4cc4",
+      "image": "solarpump.png",
+      "brand": "google",
+      "review": 5,
+      "title": "Solar Water Pump Inverter 1.50KW/4.2A",
+      "offer_price": "TZS 550,000",
+      "price": "TZS 700,000",
+      "campaingn_product": true,
+      "cam_product_available": 48,
+      "cam_product_sale": 12,
+      "product_type": null
+    },
+    {
+      "id": "62aefe9a9e1c4b69e47fa40f",
+      "image": "solarstreetlights.png",
+      "brand": "xioami",
+      "review": 5,
+      "title": "FL-U2-40W solar street lights",
+      "offer_price": "TZS 300,000",
+      "price": "",
+      "campaingn_product": true,
+      "cam_product_available": 12,
+      "cam_product_sale": 8,
+      "product_type": null
+    },
+    {
+      "id": "62aefe9aa96283a41a9b46fc",
+      "image": "solartv.png",
+      "brand": "xioami",
+      "review": 5,
+      "title": "Solar LED Tv 32''",
+      "offer_price": "TZS 1,700,000",
+      "price": "",
+      "campaingn_product": false,
+      "cam_product_available": null,
+      "cam_product_sale": null,
+      "product_type": null
+    }
+    
+  ]
+}

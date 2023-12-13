@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:email",
+ "creation": "2023-11-16 21:52:39.316451",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "last_name",
+  "email",
+  "phone",
+  "country",
+  "address",
+  "towncity",
+  "postcode"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "unique": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Select",
+   "label": "Country",
+   "options": "Tanzania\nKenya\nUganda\nRwanda\nDemocratic Republic of Congo\nMozambique\nZambia\nZimbabwe"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text Editor",
+   "label": "Address"
+  },
+  {
+   "fieldname": "towncity",
+   "fieldtype": "Data",
+   "label": "Town/City"
+  },
+  {
+   "fieldname": "postcode",
+   "fieldtype": "Int",
+   "label": "Postcode"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-16 22:01:05.037857",
+ "modified_by": "Administrator",
+ "module": "Ecommerce Application",
+ "name": "user registration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

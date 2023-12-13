@@ -1,0 +1,14 @@
+{
+  "name": "ecommerceapp",
+  "version": "1.0.0",
+  "description": "ReactJS Website intergrate with Ecommerce ERPNEXT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd dukani && yarn dev",
+    "build": "cd dukani && yarn build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

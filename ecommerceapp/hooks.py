@@ -215,3 +215,5 @@ app_license = "MIT"
 # auth_hooks = [
 #	"ecommerceapp.auth.validate"
 # ]
+
+website_route_rules = [{'from_route': '/dukani/<path:app_path>', 'to_route': 'dukani'},]
