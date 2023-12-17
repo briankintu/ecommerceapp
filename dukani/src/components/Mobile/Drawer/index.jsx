@@ -588,7 +588,7 @@ export default function Drawer({ className, open, action }) {
                   </a>
                 </li>
                 <li className="category-item">
-                  <a href="/Blogs">
+                  <Link to="/blogu">
                     <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Blogs</span>
@@ -622,7 +622,7 @@ export default function Drawer({ className, open, action }) {
                         </span>
                       </div> */}
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="category-item">
                   <Link href="/contact-info">

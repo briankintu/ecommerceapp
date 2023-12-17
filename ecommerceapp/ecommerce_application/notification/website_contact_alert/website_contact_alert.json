@@ -1,0 +1,31 @@
+{
+ "attach_print": 1,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2023-12-14 14:11:27.636574",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Website Contact Messages",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "hello",
+ "modified": "2023-12-14 16:03:05.139218",
+ "modified_by": "Administrator",
+ "module": "Ecommerce Application",
+ "name": "Website Contact Alert",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Support Team"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 1,
+ "sender": "SOLAR PLANET",
+ "sender_email": "solarplanet@aicl.co.tz",
+ "set_property_after_alert": "message",
+ "subject": "New Contact "
+}

@@ -7,6 +7,7 @@ import Signup from './pages/Auth/Signup'
 import Dashboard from './pages/Dashboard'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs/Blog'
+import Blogu from './pages/Blogu'
 function App() {
 	
 
@@ -31,6 +32,7 @@ function App() {
 					<Route path='/dashboard' element={<Dashboard />} />
 					<Route path='/contact-info' element={<Contact />} />
 					<Route path='/blogs' element={<Blogs />} />
+					<Route path='/blogu' element={<Blogu />} />
 					
 
 					

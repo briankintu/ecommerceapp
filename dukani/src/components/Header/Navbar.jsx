@@ -575,7 +575,7 @@ const Navbar = ({className}) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blogs">
+                  <Link to="/blogu">
                     <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                       <span>Blog</span>
                     </span>
