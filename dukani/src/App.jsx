@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs/Blog'
 import Blogu from './pages/Blogu'
+import AllProductPage from './pages/AllProductPage'
 function App() {
 	
 
@@ -33,6 +34,7 @@ function App() {
 					<Route path='/contact-info' element={<Contact />} />
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='/blogu' element={<Blogu />} />
+					<Route path='/products' element={<AllProductPage />} />
 					
 
 					

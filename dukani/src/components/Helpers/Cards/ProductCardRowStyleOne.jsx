@@ -13,11 +13,11 @@ export default function ProductCardRowStyleTwo({ className, datas,type }) {
     >
       <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
         <div className="lg:w-1/2 w-1/3 h-full">
-          <img
+          {/* <img
             src={`${process.env.PUBLIC_URL}/assets/images/${datas.image}`}
             alt=""
             className="w-full h-full object-contain"
-          />
+          /> */}
         </div>
         <div className="flex-1 flex flex-col justify-center h-full">
           <div>
