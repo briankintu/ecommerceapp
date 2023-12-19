@@ -1,4 +1,4 @@
-import {FrappeProvider, useFrappeAuth} from 'frappe-react-sdk'
+import {FrappeProvider} from 'frappe-react-sdk'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import BecomeSeller from './pages/Become'
@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Blogs from './pages/Blogs/Blog'
 import Blogu from './pages/Blogu'
 import AllProductPage from './pages/AllProductPage'
+import BidhaPage from './pages/Bidhaa'
 function App() {
 	
 
@@ -35,6 +36,7 @@ function App() {
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='/blogu' element={<Blogu />} />
 					<Route path='/products' element={<AllProductPage />} />
+					<Route path='/bidhaa' element={<BidhaPage />} />
 					
 
 					
