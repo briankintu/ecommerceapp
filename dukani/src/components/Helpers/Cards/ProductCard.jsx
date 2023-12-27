@@ -1,14 +1,15 @@
-import Compair from "../icons/Compair"
+import Compair from "../icons/Compair";
 import QuickViewIco from "../icons/QuickViewIco";
-
+import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
 
-export default function ProductCard({ doc, type }) {
-  console.log(doc);
-  // const available =
-  //   (doc.cam_product_sale /
-  //     (doc.cam_product_available + doc.cam_product_sale)) *
-  //   100;
+export default function ProductCardStyleOne({ doc,type }) {
+
+ 
+  const available =
+    (doc.cam_product_sale /
+      (doc.cam_product_available + doc.cam_product_sale)) *
+    100;
   return (
     <div
       className="product-card-one w-full h-full bg-white relative group overflow-hidden"
@@ -21,7 +22,7 @@ export default function ProductCard({ doc, type }) {
         }}
       >
         {/* product available progress */}
-        {doc.openning_stock && (
+        {doc.campaingn_product && (
           <>
             <div className="px-[30px] absolute left-0 top-3 w-full">
               <div className="progress-title flex justify-between ">
@@ -29,22 +30,22 @@ export default function ProductCard({ doc, type }) {
                   Prodcuts Available
                 </p>
                 <span className="text-sm text-qblack font-600 leading-6">
-                  {doc.openning_stock}
+                  {doc.cam_product_available}
                 </span>
               </div>
               <div className="progress w-full h-[5px] rounded-[22px] bg-primarygray relative overflow-hidden">
                 <div
                   style={{
-                    width: `${doc.openning_stock}`,
+                    width: `${doc.campaingn_product ? 100 - available : 0}%`,
                   }}
                   className={`h-full absolute left-0 top-0  ${type===3?'bg-qh3-blue':'bg-qyellow'}`}
                 ></div>
               </div>
             </div>
           </>
-        )} 
+        )}
         {/* product type */}
-        {doc.item_group && !doc.openning_stock && (
+        {doc.item_group && !doc.opening_stock && (
           <div className="product-type absolute right-[14px] top-[17px]">
             <span
               className={`text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider ${
@@ -54,7 +55,7 @@ export default function ProductCard({ doc, type }) {
               {doc.item_group}
             </span>
           </div>
-        )} 
+        )}
       </div>
       <div className="product-card-details px-[30px] pb-[30px] relative">
         {/* add to card button */}
@@ -78,24 +79,24 @@ export default function ProductCard({ doc, type }) {
           </button>
         </div>
         <div className="reviews flex space-x-[1px] mb-3">
-          {/* {Array.from(Array(doc.review), () => (
+          {Array.from(Array(doc.review), () => (
             <span key={doc.review + Math.random()}>
               <Star />
             </span>
-          ))} */}
+          ))}
         </div>
         <a href="/single-product">
           <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">
-            {doc.name}
+            {doc.item_name}
           </p>
         </a>
         <p className="price">
           <span className="main-price text-qgray line-through font-600 text-[18px]">
             {doc.standard_rate}
           </span>
-           <span className="offer-price text-qred font-600 text-[18px] ml-2">
+          <span className="offer-price text-qred font-600 text-[18px] ml-2">
             {doc.standard_rate}
-          </span> 
+          </span>
         </p>
       </div>
       {/* quick-access-btns */}

@@ -10,7 +10,6 @@ import { useState } from "react";
 import "react-input-range/lib/css/index.css"
 import BreadcrumbCom from "../../components/BreadcrumbCom";
 import ProductsIterator from "../../components/Helpers/ProductsIterator";
-import ProductCardStyleOne from "../../components/Helpers/Cards/ProductCardRowStyleOne"
 import Layout from "../../components/Layout";
 import BidhaaFilter from "./BidhaFilter";
 
