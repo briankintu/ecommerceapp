@@ -118,13 +118,12 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+    "User": {
+        "after_insert": "ecommerceapp.ecommerceapp.doctype.dukani_user.dukani_user.add_user_to_dukani",
+        "before_validate": "ecommerceapp.ecommerceapp.doctype.dukani_user.dukani_user.add_user_to_dukani",
+    }
+}
 
 # Scheduled Tasks
 # ---------------

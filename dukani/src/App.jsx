@@ -37,6 +37,7 @@ function App() {
 					<Route path='/blogu' element={<Blogu />} />
 					<Route path='/products' element={<AllProductPage />} />
 					<Route path='/bidhaa' element={<BidhaPage />} />
+					<Route path='/login' element={<Login />} />
 					
 
 					

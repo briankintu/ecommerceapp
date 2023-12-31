@@ -1,0 +1,57 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"R4jP9H4EnU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dukani</span>\",\"col\":12}},{\"id\":\"qqIjfk7fXx\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Dukani Ecommerce\",\"col\":12}},{\"id\":\"al6g5oZtvV\",\"type\":\"card\",\"data\":{\"card_name\":\"Doctypes\",\"col\":4}}]",
+ "creation": "2023-12-28 01:58:03.586173",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Dukani",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Doctypes",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dukani Settings",
+   "link_count": 0,
+   "link_to": "Dukani Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dukani Users",
+   "link_count": 0,
+   "link_to": "Dukani User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-12-29 02:27:01.382738",
+ "modified_by": "Administrator",
+ "module": "Ecommerce Application",
+ "name": "Dukani",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "Dukani"
+}
