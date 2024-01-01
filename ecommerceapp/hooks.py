@@ -120,8 +120,8 @@ app_license = "MIT"
 
 doc_events = {
     "User": {
-        "after_insert": "ecommerceapp.ecommerceapp.doctype.dukani_user.dukani_user.add_user_to_dukani",
-        "before_validate": "ecommerceapp.ecommerceapp.doctype.dukani_user.dukani_user.add_user_to_dukani",
+        "after_insert": "ecommerceapp.ecommerce_application.doctype.dukani_user.dukani_user.add_user_to_dukani",
+        "before_validate": "ecommerceapp.ecommerce_application.doctype.dukani_user.dukani_user.add_user_to_dukani",
     }
 }
 

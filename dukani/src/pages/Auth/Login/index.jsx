@@ -1,35 +1,37 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import InputCom from "../../../components/Helpers/InputCom";
 import Layout from "../../../components/Layout/index";
 import Thumbnail from "./Thumbnail";
-import { useFrappeAuth } from 'frappe-react-sdk'
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
 
 
 
 
 export default function Login() {
-  const {
-    currentUser,
-    isValidating,
-    isLoading,
-    login,
-    logout,
-    error,
-    updateCurrentUser,
-    getUserCookie,
-  } = useFrappeAuth();
-
-
-
+  const [error, setError] = useState(null);
   const [checked, setValue] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  // const [username, setUserName]= useFrappeAuth
-  // const [password, setPassword]= useFrappeAuth
+  const { login, isLoading } = useContext(UserContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+ 
 
   const rememberMe = () => {
     setValue(!checked);
   };
+
+
+  async function onSubmit(values) {
+    setError(null);
+    return login(values.email, values.password).catch((error) => {
+      setError(error);
+    });
+  }
 
   
 
@@ -69,7 +71,6 @@ export default function Login() {
                       name="email"
                       type="email"
                       inputClasses="h-[50px]"
-                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">
@@ -79,7 +80,6 @@ export default function Login() {
                       name="password"
                       type="password"
                       inputClasses="h-[50px]"
-                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
