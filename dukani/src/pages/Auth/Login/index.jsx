@@ -1,25 +1,31 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import InputCom from "../../../components/Helpers/InputCom";
 import Layout from "../../../components/Layout/index";
 import Thumbnail from "./Thumbnail";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-
+import { useFrappeAuth } from 'frappe-react-sdk'
 
 
 
 
 export default function Login() {
-  const [error, setError] = useState(null);
-  const [checked, setValue] = useState(false);
-  const { login, isLoading } = useContext(UserContext);
-
   const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm();
- 
+    currentUser,
+    isValidating,
+    isLoading,
+    login,
+    logout,
+    error,
+    updateCurrentUser,
+    getUserCookie,
+  } = useFrappeAuth();
+
+
+
+  const [checked, setValue] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  // const [username, setUserName]= useFrappeAuth
+  // const [password, setPassword]= useFrappeAuth
 
   const rememberMe = () => {
     setValue(!checked);
@@ -66,22 +72,14 @@ export default function Login() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-area">
                   <div className="input-item mb-5">
-                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                    Email*
-                  </h6>
-                <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
-                <input
-                    
-                    type="text" {...register("email", {
-                      required: "Email Address is Required"
-                    })}
-                    placeholder="abc@example.com"
-                    aria-invalid={errors.email ? "true" : "false"}
-                    inputClasses="h-[50px]"
-                  />
-                  {errors.email?.type === "required"
-                                                && <p role="alert">{errors.email.message}</p>}
-                </div>
+                    <InputCom
+                      placeholder="example@quomodosoft.com"
+                      label="Email Address*"
+                      name="email"
+                      type="email"
+                      inputClasses="h-[50px]"
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
                   </div>
                   <div className="input-item mb-5">
                     <InputCom
@@ -90,16 +88,18 @@ export default function Login() {
                       name="password"
                       type="password"
                       inputClasses="h-[50px]"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
                     <div className="remember-checkbox flex items-center space-x-2.5">
-                      <button
-                        onClick={rememberMe}
-                        type="button"
+                      <button type='submit'
+                        disabled={isSubmitting}
+                        // onClick={rememberMe}
+                        
                         className="w-5 h-5 text-qblack flex justify-center items-center border border-light-gray"
                       >
-                        {checked && (
+                        {/* {checked && (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -112,14 +112,16 @@ export default function Login() {
                               clipRule="evenodd"
                             />
                           </svg>
-                        )}
+                        )} */}
+
+                        {isSubmitting ? <p>...Loading</p> : 'Login'}
                       </button>
-                      <span
+                      {/* <span
                         onClick={rememberMe}
                         className="text-base text-black"
                       >
                         Remember Me
-                      </span>
+                      </span> */}
                     </div>
                     <a
                       href="/forgot-password"
