@@ -31,7 +31,7 @@ function App() {
 					<Route path='/become-seller' element={< BecomeSeller />} />
 					<Route path='/ingia' element={< Login />} />
 					<Route path='/jiunge' element={< Signup />} />
-					<Route path='/dashboard' element={<Dashboard />} />
+					<Route path='/dash' element={<Dashboard />} />
 					<Route path='/contact-info' element={<Contact />} />
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='/blogu' element={<Blogu />} />

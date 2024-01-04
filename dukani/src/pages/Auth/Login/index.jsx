@@ -1,41 +1,42 @@
-import { useState } from "react";
-import InputCom from "../../../components/Helpers/InputCom";
+import { useState, useContext } from "react";
 import Layout from "../../../components/Layout/index";
 import Thumbnail from "./Thumbnail";
-import { useFrappeAuth } from 'frappe-react-sdk'
-
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { isEmailValid } from "../../../utils/validations";
+import { UserContext } from "../../../utils/auth/UserProvider";
+import { IconButton} from "@radix-ui/themes"
+import { BiShow, BiHide } from "react-icons/bi";
 
 
 
 export default function Login() {
-  const {
-    currentUser,
-    isValidating,
-    isLoading,
-    login,
-    logout,
-    error,
-    updateCurrentUser,
-    getUserCookie,
-  } = useFrappeAuth();
-
-
-
+  const [error, setError] = useState(null);
+  const { login, isLoading } = useContext(UserContext);
   const [checked, setValue] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  // const [username, setUserName]= useFrappeAuth
-  // const [password, setPassword]= useFrappeAuth
+  const [isOpen, setIsOpen] = useState(false)
+ 
+  const onClickReveal = () => {
+    setIsOpen(!isOpen)
+}
 
-  const rememberMe = () => {
-    setValue(!checked);
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+ 
+
+   const rememberMe = () => {
+     setValue(!checked);
+   };
 
 
   async function onSubmit(values) {
     setError(null);
     return login(values.email, values.password).catch((error) => {
       setError(error);
+      console.log(error);
     });
   }
 
@@ -44,7 +45,9 @@ export default function Login() {
  
   return (
     <Layout childrenClasses="pt-0 pb-0">
+       
       <div className="login-page-wrapper w-full py-10">
+      {isLoading ? <span>Please be patient</span> :  
         <div className="container-x mx-auto">
           <div className="lg:flex items-center relative">
             <div className="lg:w-[572px] w-full h-[783px] bg-white flex flex-col justify-center sm:p-10 p-5 border border-[#E0E0E0]">
@@ -70,36 +73,76 @@ export default function Login() {
                   </div>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
+
+             
+  
                 <div className="input-area">
                   <div className="input-item mb-5">
-                    <InputCom
-                      placeholder="example@quomodosoft.com"
-                      label="Email Address*"
-                      name="email"
-                      type="email"
-                      inputClasses="h-[50px]"
-                      onChange={(e) => setUsername(e.target.value)}
-                    />
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Email*
+                  </h6>
+                <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="email" {...register("email", {
+                      validate: (email) => isEmailValid(email) || "Please enter a valid email address.",
+                      required: "Email Address is Required"
+                    })}
+                    name="email"
+                    placeholder="abc@example.com"
+                    autoComplete="email"
+                    required
+                    tabIndex={0}
+                    aria-invalid={errors.email ? "true" : "false"}
+                    
+                  />
+                  {errors.email?.type === "required"
+                                                && <p role="alert">{errors.email.message}</p>}
+                </div>
                   </div>
                   <div className="input-item mb-5">
-                    <InputCom
-                      placeholder="● ● ● ● ● ●"
-                      label="Password*"
-                      name="password"
-                      type="password"
-                      inputClasses="h-[50px]"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
+                    <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Password*
+                  </h6>
+                <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                <input  className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                     {...register("password", {
+                      required: "Password is required.",
+                      minLength: {
+                        value: 6,
+                        message: "Password should be minimum 6 characters." 
+                      }
+                    })}
+                    name="password"
+                    type={isOpen ? "text" : "password"}
+                    autoComplete="current-password"
+                    required
+                    placeholder="● ● ● ● ● ●"
+                    aria-invalid={errors.password ? "true" : "false"}
+                   
+                  />
+                  <IconButton
+                   type='button'
+                   size='2'
+                   variant='ghost'
+                   aria-label={isOpen ? "Mask password" : "Reveal password"}
+                   onClick={onClickReveal}
+                   tabIndex={-1}>
+                   {isOpen ? <BiHide /> : <BiShow />} 
+              </IconButton>
+                  {errors.password?.type === "required"
+                                                && <p role="alert">{errors.password.message}</p>}
+                </div>
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
                     <div className="remember-checkbox flex items-center space-x-2.5">
                       <button type='submit'
-                        disabled={isSubmitting}
-                        // onClick={rememberMe}
+                        onClick={rememberMe}
                         
                         className="w-5 h-5 text-qblack flex justify-center items-center border border-light-gray"
                       >
-                        {/* {checked && (
+                         {checked && (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -112,16 +155,16 @@ export default function Login() {
                               clipRule="evenodd"
                             />
                           </svg>
-                        )} */}
+                        )} 
 
-                        {isSubmitting ? <p>...Loading</p> : 'Login'}
+                    
                       </button>
-                      {/* <span
+                       <span
                         onClick={rememberMe}
                         className="text-base text-black"
                       >
                         Remember Me
-                      </span> */}
+                      </span> 
                     </div>
                     <a
                       href="/forgot-password"
@@ -133,10 +176,13 @@ export default function Login() {
                   <div className="signin-area mb-3.5">
                     <div className="flex justify-center">
                       <button
+                       disabled={isSubmitting}
                         type="submit"
+                        
                         className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
                       >
-                        <span>Log In</span>
+                        {isSubmitting ? <span>...Loading</span>: 'Login'}
+                        
                       </button>
                     </div>
                     <a
@@ -203,8 +249,10 @@ export default function Login() {
                   </div>
                 </div>
                 </form>
+                         
               </div>
             </div>
+                         
             <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center ">
               <div
                 className="absolute xl:-right-20 -right-[138px]"
@@ -215,7 +263,9 @@ export default function Login() {
             </div>
           </div>
         </div>
+}
       </div>
+                         
     </Layout>
   );
 }
