@@ -63,15 +63,25 @@ export default function Login() {
                     </svg>
                   </div>
                 </div>
+                <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-area">
                   <div className="input-item mb-5">
-                    <InputCom
-                      placeholder="example@quomodosoft.com"
-                      label="Email Address*"
-                      name="email"
-                      type="email"
-                      inputClasses="h-[50px]"
-                    />
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Email*
+                  </h6>
+                <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                <input
+                    
+                    type="text" {...register("email", {
+                      required: "Email Address is Required"
+                    })}
+                    placeholder="abc@example.com"
+                    aria-invalid={errors.email ? "true" : "false"}
+                    inputClasses="h-[50px]"
+                  />
+                  {errors.email?.type === "required"
+                                                && <p role="alert">{errors.email.message}</p>}
+                </div>
                   </div>
                   <div className="input-item mb-5">
                     <InputCom
@@ -190,6 +200,7 @@ export default function Login() {
                     </p>
                   </div>
                 </div>
+                </form>
               </div>
             </div>
             <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center ">
