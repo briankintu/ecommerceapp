@@ -1,10 +1,15 @@
-import React from 'react'
+import { useContext } from "react"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Arrow from "../Helpers/icons/Arrow";
+import { UserContext } from '../../utils/auth/UserProvider';
+import { useUserData } from '../../hooks/useUserData';
 
 
 const Navbar = ({className}) => {
+  const userData = useUserData()
+  const { logout } = useContext(UserContext)
+  
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
   const handler = () => {
@@ -653,6 +658,38 @@ const Navbar = ({className}) => {
                 
               </div>
             </Link>
+          </div>
+          <div className="become-seller-btn  w-[161px] h-[40px]" onClick={logout}>
+            
+              <div className="yellow-btn flex justify-center items-center cursor-pointer">
+                
+                  <span className="text-sm font-600">Log Out</span>
+                  <span>
+                    <svg
+                      width="6"
+                      height="10"
+                      viewBox="0 0 6 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="1.08984"
+                        width="6.94106"
+                        height="1.54246"
+                        transform="rotate(45 1.08984 0)"
+                      />
+                      <rect
+                        x="6"
+                        y="4.9082"
+                        width="6.94106"
+                        height="1.54246"
+                        transform="rotate(135 6 4.9082)"
+                      />
+                    </svg>
+                  </span>
+                
+              </div>
+            
           </div>
         </div>
       </div>
