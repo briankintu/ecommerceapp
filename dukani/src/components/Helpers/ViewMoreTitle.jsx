@@ -3,6 +3,7 @@ export default function ViewMoreTitle({
     categoryTitle = "",
     className,
     children,
+    seeMoreUrl = "",
    
   }) {
     return (
@@ -15,7 +16,7 @@ export default function ViewMoreTitle({
               </h1>
             </div>
             <div>
-             <Link to="/products">
+             <Link to={seeMoreUrl}>
                 <div className="flex space-x-2 items-center">
                   <p className="text-base font-600 text-qblack">View More</p>
                   <span className="animate-right-dir">

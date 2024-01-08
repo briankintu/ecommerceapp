@@ -68,7 +68,7 @@ const Home = () => {
      <Banner className="banner-wrapper mb-[46px]" />
      <ViewMoreTitle
         className="my-categories mb-[60px]"
-        seeMoreUrl="/all-products"
+        seeMoreUrl="/bidhaa"
         categoryTitle="My Market Category"
       >
         <CategoriesSection />

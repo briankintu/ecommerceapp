@@ -4,10 +4,7 @@ import Layout from '../../components/Layout'
 import Login from '../Auth/Login'
 
 const Dashboard = () => {
-    const [token, setToken] = useState()
-    if(!token){
-        {return <Login setToken={setToken}/>}
-    }
+    
   return (
     <Layout>
         <h1 className='text-black font-bold text-2xl'>Dashboard</h1>

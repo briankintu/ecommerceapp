@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CategoriesSection() {
   return (
@@ -7,6 +8,7 @@ export default function CategoriesSection() {
         <div className="container-x mx-auto">
           <div className="w-full categories-iems">
             <div className="grid xl:grid-cols-8 sm:grid-cols-4 grid-cols-2 gap-10 mb-[46px]">
+              <Link to="/bidhaa/Wire cables">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -30,6 +32,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="bidhaa/Arrestors">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -53,6 +57,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="bidhaa/Change Over">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -76,6 +82,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Holders">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -99,6 +107,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Lugs" >
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -131,6 +141,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Switches">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -154,6 +166,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Multi chargers">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -178,6 +192,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link>
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -202,8 +218,10 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
             </div>
             <div className="grid xl:grid-cols-8 sm:grid-cols-4 grid-cols-2 gap-10">
+              <Link to="/bidhaa/Solar Freezers and Fridges">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -227,6 +245,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/solar TV">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -250,6 +270,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Water Heaters">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -273,6 +295,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Solar Inverters">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -304,6 +328,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Solar Batteries">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -327,6 +353,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Solar Bulbs" >
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -350,6 +378,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Solar Panel">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -373,6 +403,8 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
+              <Link to="/bidhaa/Water Pumps">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
                   <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
@@ -396,6 +428,7 @@ export default function CategoriesSection() {
                   </p>
                 </div>
               </div>
+              </Link>
             </div>
           </div>
         </div>

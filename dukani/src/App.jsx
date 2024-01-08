@@ -1,5 +1,6 @@
 import {FrappeProvider} from 'frappe-react-sdk'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { UserProvider } from './utils/auth/UserProvider'
 import Home from './pages/Home'
 import BecomeSeller from './pages/Become'
 import Login from './pages/Auth/Login'
@@ -10,6 +11,10 @@ import Blogs from './pages/Blogs/Blog'
 import Blogu from './pages/Blogu'
 import AllProductPage from './pages/AllProductPage'
 import BidhaPage from './pages/Bidhaa'
+
+
+
+
 function App() {
 	
 
@@ -23,7 +28,8 @@ function App() {
 		// 	useFrappeAuth 
 
 		// }>
-		<FrappeProvider socketPort={import.meta.env.VITE_SOCKET_PORT ?? '' } > 
+		<FrappeProvider url={import.meta.env.VITE_FRAPPE_PATH ?? ''} socketPort={import.meta.env.VITE_SOCKET_PORT ?? '' } > 
+		 <UserProvider>
 
 			<BrowserRouter basename={import.meta.env.VITE_BASE_PATH}>
 				<Routes>
@@ -37,7 +43,9 @@ function App() {
 					<Route path='/blogu' element={<Blogu />} />
 					<Route path='/products' element={<AllProductPage />} />
 					<Route path='/bidhaa' element={<BidhaPage />} />
-					<Route path='/login' element={<Login />} />
+					<Route path='/bidhaa/:id' element={<BidhaPage />} />
+					<Route path='/bidhaa/:item_group' element={<BidhaPage />} />
+
 					
 
 					
@@ -47,6 +55,7 @@ function App() {
 				</Routes>
 
 			</BrowserRouter>
+			</UserProvider>
 
 		</FrappeProvider>
 
