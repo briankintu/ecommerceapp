@@ -47,7 +47,7 @@ const Profile = () => {
             <BreadcrumbCom
               paths={[
                 { name: "home", path: "/" },
-                { name: "profile", path: "/profile" },
+                { name: "dashboard", path: "/dash" },
               ]}
             />
             <div className="w-full bg-white px-10 py-9">
