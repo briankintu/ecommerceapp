@@ -1,6 +1,6 @@
 import React from "react";
-import DataIteration from "../../../Helpers/DataIteration";
-import Star from "../../../Helpers/icons/Star";
+import DataIteration from "../../../components/Helpers/DataIteration";
+import Star from "../../../components/Helpers/icons/Star";
 
 export default function ReviewTab({ className, products }) {
   return (

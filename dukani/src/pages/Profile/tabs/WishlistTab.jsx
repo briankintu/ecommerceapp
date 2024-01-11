@@ -1,5 +1,5 @@
 import React from "react";
-import InputQuantityCom from "../../../Helpers/InputQuantityCom";
+import InputQuantityCom from "../../../components/Helpers/InputQuantityCom";
 
 export default function WishlistTab({ className }) {
   return (
