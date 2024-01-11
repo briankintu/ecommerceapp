@@ -3,6 +3,7 @@ import Layout from '../../components/Layout'
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import BreadcrumbCom from "../../components/BreadcrumbCom";
+import IcoDashboard from "./icons/IcoDashboard"
 
 
 
@@ -48,6 +49,25 @@ const Dashboard = () => {
                       }`}
                     ></div>
                   </button>
+                </div>
+                <div className="profile-wrapper w-full mt-8 flex space-x-10">
+                <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
+                <div className="flex flex-col space-y-10">
+                <div className="item group">
+                <Link to="/profile#dashboard">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoDashboard />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Dashbaord
+                          </span>
+                        </div>
+                      </Link>
+                  </div>
+                  </div>
+                  </div>
+                  
                 </div>
               </div>
             </div>
