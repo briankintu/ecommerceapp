@@ -23,7 +23,7 @@ const UserProvider = ({ children }) => {
       .then(() => {
         // Reload the page so that the boot info is fetched again
         const URL = import.meta.env.VITE_BASE_NAME ? `${import.meta.env.VITE_BASE_NAME}` : '';
-        window.location.replace(`${URL}/inga`);
+        window.location.replace(`/`);
         // window.location.reload()
       });
   };
