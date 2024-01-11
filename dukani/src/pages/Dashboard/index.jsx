@@ -4,10 +4,29 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import BreadcrumbCom from "../../components/BreadcrumbCom";
 import IcoDashboard from "./icons/IcoDashboard"
+import IcoPeople from "./icons/IcoPeople"
+import IcoPayment from "./icons/IcoPayment"
+import IcoCart from "./icons/IcoCart"
+import IcoLove from "./icons/IcoLove"
+import IcoAdress from "./icons/IcoAdress"
+import IcoReviewHand from "./icons/IcoReviewHand"
+import IcoPassword from "./icons/IcoPassword"
+import IcoSupport from "./icons/IcoSupport"
+import IcoLogout from "./icons/IcoLogout"
+import ProfileTab from "./tabs/ProfileTab"
+import AddressesTab from "./tabs/AddressesTab";
+import Dashboard from "./tabs/Dashboard";
+import OrderTab from "./tabs/OrderTab";
+import PasswordTab from "./tabs/PasswordTab";
+import Payment from "./tabs/Payment";
+import ReviewTab from "./tabs/ReviewTab";
+import SupportTab from "./tabs/SupportTab";
+import WishlistTab from "./tabs/WishlistTab"
 
 
 
-const Dashboard = () => {
+
+const Profile = () => {
   const [switchDashboard, setSwitchDashboard] = useState(false);
   const location = useLocation();
   const getHashContent = location.hash.split("#");
@@ -54,7 +73,7 @@ const Dashboard = () => {
                 <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
                 <div className="flex flex-col space-y-10">
                 <div className="item group">
-                <Link to="/profile#dashboard">
+                <Link to="/dash#dashboard">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
                             <IcoDashboard />
@@ -65,8 +84,157 @@ const Dashboard = () => {
                         </div>
                       </Link>
                   </div>
+                  <div className="item group">
+                      <Link to="/dash#profile">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoPeople />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Parsonal Info
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#payment">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoPayment />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Payment Method
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#order">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoCart />
+                          </span>
+                          <span className=" font-normal text-base">Order</span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#wishlist">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoLove />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Wishlist
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#address">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoAdress />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Address
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#review">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoReviewHand />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Reviews
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#password">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoPassword />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Change Password
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#support">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoSupport />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Support Ticket
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
+                      <Link to="/dash#profile">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoLogout />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Logoout
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+
+
                   </div>
                   </div>
+                  <div className="flex-1">
+                  <div className="item-body dashboard-wrapper w-full">
+                    {active === "dashboard" ? (
+                      <Dashboard />
+                    ) : active === "profile" ? (
+                      <>
+                        <ProfileTab />
+                      </>
+                    ) : active === "payment" ? (
+                      <>
+                        <Payment />
+                      </>
+                    ) : active === "order" ? (
+                      <>
+                        <OrderTab />
+                      </>
+                    ) : active === "wishlist" ? (
+                      <>
+                        <WishlistTab />
+                      </>
+                    ) : active === "address" ? (
+                      <>
+                        <AddressesTab />
+                      </>
+                    ) : active === "password" ? (
+                      <>
+                        <PasswordTab />
+                      </>
+                    ) : active === "support" ? (
+                      <>
+                        <SupportTab />
+                      </>
+                    ) : active === "review" ? (
+                      <>
+                        <ReviewTab products={datas.products} />
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
                   
                 </div>
               </div>
@@ -79,4 +247,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Profile

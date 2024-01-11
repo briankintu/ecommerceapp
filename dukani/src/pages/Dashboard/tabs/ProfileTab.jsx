@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import InputCom from "../../../Helpers/InputCom";
+import InputCom from "../../../components/Helpers/InputCom"
 
 export default function ProfileTab() {
   const [profileImg, setprofileImg] = useState(null);
@@ -123,14 +123,14 @@ export default function ProfileTab() {
             <div className="flex xl:justify-center justify-start">
               <div className="relative">
                 <div className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden relative">
-                  <img
+                  {/* <img
                     src={
                       profileImg ||
                       `${process.env.PUBLIC_URL}/assets/images/edit-profileimg.jpg`
                     }
                     alt=""
                     className="object-cover w-full h-full"
-                  />
+                  /> */}
                 </div>
                 <input
                   ref={profileImgInput}

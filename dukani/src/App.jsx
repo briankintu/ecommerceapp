@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import BecomeSeller from './pages/Become'
 import Login from './pages/Auth/Login'
 import Signup from './pages/Auth/Signup'
-import Dashboard from './pages/Dashboard'
+import Profile from './pages/Dashboard'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs/Blog'
 import Blogu from './pages/Blogu'
@@ -37,7 +37,7 @@ function App() {
 					<Route path='/become-seller' element={< BecomeSeller />} />
 					<Route path='/ingia' element={< Login />} />
 					<Route path='/jiunge' element={< Signup />} />
-					<Route path='/dash' element={<Dashboard />} />
+					<Route path='/dash' element={<Profile />} />
 					<Route path='/contact-info' element={<Contact />} />
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='/blogu' element={<Blogu />} />

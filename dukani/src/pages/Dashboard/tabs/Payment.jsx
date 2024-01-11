@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function Payment() {
   return (
@@ -8,10 +8,10 @@ export default function Payment() {
           <li className="sm:flex justify-between items-center w-full py-[30px] border-b border-light-purple">
             <div className="flex space-x-5 items-center mb-3 sm:mb-0">
               <div className="sm:w-[120px] sm:h-[120px] flex items-center justify-center rounded-full sm:bg-[#F2F2F2]">
-                <img
+                {/* <img
                   src={`${process.env.PUBLIC_URL}/assets/images/card-1.svg`}
                   alt="payment"
-                />
+                /> */}
               </div>
               <div className="flex flex-col space-y-2">
                 <p className="sm:text-xl text-lg tracking-wide text-qblack font-bold">
@@ -37,10 +37,10 @@ export default function Payment() {
           <li className="sm:flex justify-between items-center w-full py-[30px] border-b border-light-purple">
             <div className="flex space-x-5 items-center mb-3 sm:mb-0">
               <div className="sm:w-[120px] sm:h-[120px] flex items-center justify-center rounded-full sm:bg-[#F2F2F2]">
-                <img
+                {/* <img
                   src={`${process.env.PUBLIC_URL}/assets/images/card-2.svg`}
                   alt="payment"
-                />
+                /> */}
               </div>
               <div className="flex flex-col space-y-2">
                 <p className="sm:text-xl text-lg tracking-wide text-qblack font-bold">
@@ -66,10 +66,10 @@ export default function Payment() {
           <li className="sm:flex justify-between items-center w-full py-[30px] border-b border-light-purple">
             <div className="flex space-x-5 items-center mb-3 sm:mb-0">
               <div className="sm:w-[120px] sm:h-[120px] flex items-center justify-center rounded-full sm:bg-[#F2F2F2]">
-                <img
+                {/* <img
                   src={`${process.env.PUBLIC_URL}/assets/images/card-3.svg`}
                   alt="payment"
-                />
+                /> */}
               </div>
               <div className="flex flex-col space-y-2">
                 <p className="sm:text-xl text-lg tracking-wide text-qblack font-bold">
@@ -95,10 +95,10 @@ export default function Payment() {
           <li className="sm:flex justify-between items-center w-full py-[30px] border-b border-light-purple">
             <div className="flex space-x-5 items-center mb-3 sm:mb-0">
               <div className="sm:w-[120px] sm:h-[120px] flex items-center justify-center rounded-full sm:bg-[#F2F2F2]">
-                <img
+                {/* <img
                   src={`${process.env.PUBLIC_URL}/assets/images/card-4.svg`}
                   alt="payment"
-                />
+                /> */}
               </div>
               <div className="flex flex-col space-y-2">
                 <p className="sm:text-xl text-lg tracking-wide text-qblack font-bold">
