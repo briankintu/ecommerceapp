@@ -23,10 +23,7 @@ import ReviewTab from "./tabs/ReviewTab";
 import SupportTab from "./tabs/SupportTab";
 import WishlistTab from "./tabs/WishlistTab"
 
-
-
-
-const Profile = () => {
+ export default function Profile () {
   const [switchDashboard, setSwitchDashboard] = useState(false);
   const location = useLocation();
   const getHashContent = location.hash.split("#");
@@ -42,16 +39,16 @@ const Profile = () => {
   return (
     <Layout childrenClasses="pt-0 pb-0">
        <div className="profile-page-wrapper w-full">
-       <div className="container-x mx-auto">
-       <div className="w-full my-10">
+        <div className="container-x mx-auto">
+          <div className="w-full my-10">
             <BreadcrumbCom
               paths={[
                 { name: "home", path: "/" },
-                { name: "dashboard", path: "/dash" },
+                { name: "dash", path: "/profile" },
               ]}
             />
             <div className="w-full bg-white px-10 py-9">
-            <div className="title-area w-full flex justify-between items-center">
+              <div className="title-area w-full flex justify-between items-center">
                 <h1 className="text-[22px] font-bold text-qblack">
                   Your Dashboard
                 </h1>
@@ -69,11 +66,12 @@ const Profile = () => {
                     ></div>
                   </button>
                 </div>
-                <div className="profile-wrapper w-full mt-8 flex space-x-10">
+              </div>
+              <div className="profile-wrapper w-full mt-8 flex space-x-10">
                 <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
-                <div className="flex flex-col space-y-10">
-                <div className="item group">
-                <Link to="/dash#dashboard">
+                  <div className="flex flex-col space-y-10">
+                    <div className="item group">
+                      <Link to="/dash#dashboard">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
                             <IcoDashboard />
@@ -83,8 +81,8 @@ const Profile = () => {
                           </span>
                         </div>
                       </Link>
-                  </div>
-                  <div className="item group">
+                    </div>
+                    <div className="item group">
                       <Link to="/dash#profile">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
@@ -96,6 +94,7 @@ const Profile = () => {
                         </div>
                       </Link>
                     </div>
+
                     <div className="item group">
                       <Link to="/dash#payment">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
@@ -190,11 +189,9 @@ const Profile = () => {
                         </div>
                       </Link>
                     </div>
-
-
                   </div>
-                  </div>
-                  <div className="flex-1">
+                </div>
+                <div className="flex-1">
                   <div className="item-body dashboard-wrapper w-full">
                     {active === "dashboard" ? (
                       <Dashboard />
@@ -235,16 +232,12 @@ const Profile = () => {
                     )}
                   </div>
                 </div>
-                  
-                </div>
               </div>
             </div>
-            </div>
-
-       </div>
+          </div>
         </div>
+      </div>
     </Layout>
   )
 }
 
-export default Profile
