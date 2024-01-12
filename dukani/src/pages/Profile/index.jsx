@@ -24,6 +24,7 @@ import SupportTab from "./tabs/SupportTab";
 import WishlistTab from "./tabs/WishlistTab"
 
  export default function Profile () {
+  
   const [switchDashboard, setSwitchDashboard] = useState(false);
   const location = useLocation();
   const getHashContent = location.hash.split("#");

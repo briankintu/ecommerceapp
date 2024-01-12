@@ -1,11 +1,16 @@
-import React from "react";
+
+import { useUserData } from "../../../hooks/useUserData";
+
 
 export default function Dashboard() {
+
+  const userData = useUserData()
+
   return (
     <>
       <div className="welcome-msg w-full">
         <div>
-          <p className="text-qblack text-lg">Hello, Shovo</p>
+          <p className="text-qblack text-lg">Hello, {userData.full_name}</p>
           <h1 className="font-bold text-[24px] text-qblack">
             Welcome to your Profile
           </h1>
