@@ -242,7 +242,7 @@ export default function Signup() {
                   <div className="signin-area mb-3">
                     <div className="flex justify-center">
                       <button
-                        type="button"
+                        type="submit"
                         className="black-btn text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
                       >
                         <span>Create Account</span>
