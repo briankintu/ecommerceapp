@@ -1,37 +1,35 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import InputCom from "../../../components/Helpers/InputCom";
 import Layout from "../../../components/Layout";
 import Thumbnail from "./Thumbnail";
 import { useFrappeCreateDoc } from "frappe-react-sdk";
 import { isEmailValid } from "../../../utils/validations";
+import { UserContext } from "../../../utils/auth/UserProvider";
 
 export default function Signup() {
+
+  const { currentUser } = useContext(UserContext)
   const [ error, setError] = useState(null);
   const [checked, setValue] = useState(false);
-
-
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
-
   const { createDoc } = useFrappeCreateDoc()
 
   const onSubmit = (data) => {
-      createDoc('User', data)
-      .then(() => {
-          reset()
-          alert("Please check your email , to finish your registration!")
-          
-      })
-  }
+    createDoc('User', data)
+    .then(() => {
+        reset()
+        alert("Please check your email , to finish your registration!")
+        
+    })
+}
 
 
-  const rememberMe = () => {
-    setValue(!checked);
-  };
+const rememberMe = () => {
+  setValue(!checked);
+};
 
-
-
-
+  if (!currentUser || currentUser === 'Guest') {
+ 
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="login-page-wrapper w-full py-10">
@@ -101,7 +99,7 @@ export default function Signup() {
                     })}
                   
                     placeholder="Enter Last Name"
-                    aria-invalid={errors.first_name ? "true" : "false"}
+                    aria-invalid={errors.last_name ? "true" : "false"}
                     name="last_name"
                    
                     
@@ -192,7 +190,7 @@ export default function Signup() {
                    
                     
                   />
-                   {errors.mobile_no?.type === "required"
+                   {errors.location?.type === "required"
                                                 && <p role="alert">{errors.location.message}</p>}
                   </div>
 
@@ -275,4 +273,5 @@ export default function Signup() {
       </div>
     </Layout>
   );
+}
 }
