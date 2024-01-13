@@ -1,13 +1,37 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import InputCom from "../../../components/Helpers/InputCom";
 import Layout from "../../../components/Layout";
 import Thumbnail from "./Thumbnail";
+import { useFrappeCreateDoc } from "frappe-react-sdk";
+import { isEmailValid } from "../../../utils/validations";
 
 export default function Signup() {
+  const [ error, setError] = useState(null);
   const [checked, setValue] = useState(false);
+
+
+  const { register, handleSubmit, reset, formState: { errors } } = useForm()
+
+  const { createDoc } = useFrappeCreateDoc()
+
+  const onSubmit = (data) => {
+      createDoc('User', data)
+      .then(() => {
+          reset()
+          alert("Please check your email , to finish your registration!")
+          
+      })
+  }
+
+
   const rememberMe = () => {
     setValue(!checked);
   };
+
+
+
+
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="login-page-wrapper w-full py-10">
@@ -36,112 +60,153 @@ export default function Signup() {
                     </svg>
                   </div>
                 </div>
+                <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="input-area">
                   <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                    <InputCom
-                      placeholder="Enter First Name"
-                      label="Frist Name*"
-                      name="fname"
-                      type="text"
-                      inputClasses="h-[50px]"
-                    />
+                  <div className="input-com w-full h-full">
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    First Name*
+                  </h6>
+                  <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                  <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="text" {...register("first_name", {
+                      
+                      required: "true"
+                    })}
+                  
+                    placeholder="Enter First Name"
+                    aria-invalid={errors.first_name ? "true" : "false"}
+                    name="first_name"
+                   
+                    
+                  />
+                   {errors.first_name?.type === "required"
+                                                && <p role="alert">{errors.first_name.message}</p>}
+                  </div>
 
-                    <InputCom
-                      placeholder="Enter Last Name"
-                      label="Last Name*"
-                      name="lname"
-                      type="text"
-                      inputClasses="h-[50px]"
-                    />
+
+                    </div>
+
+                    <div className="input-com w-full h-full">
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Last Name*
+                  </h6>
+                  <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                  <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="text" {...register("last_name", {
+                      
+                      required: "true"
+                    })}
+                  
+                    placeholder="Enter Last Name"
+                    aria-invalid={errors.first_name ? "true" : "false"}
+                    name="last_name"
+                   
+                    
+                  />
+                   {errors.last_name?.type === "required"
+                                                && <p role="alert">{errors.last_name.message}</p>}
+                  </div>
+
+
+                    </div>
+
+
+                    
                   </div>
                   <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                    <InputCom
-                      placeholder="example@gmail.com"
-                      label="Email Address*"
-                      name="email"
-                      type="email"
-                      inputClasses="h-[50px]"
-                    />
-
-                    <InputCom
-                      placeholder="0213 *********"
-                      label="Phone*"
-                      name="phone"
-                      type="text"
-                      inputClasses="h-[50px]"
-                    />
+                  <div className="input-com w-full h-full">
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Email*
+                  </h6>
+                  <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                  <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="email" {...register("email", {
+                      validate: (email) => isEmailValid(email) || "Please enter a valid email address. ",
+                      required: "Email Address is Required"
+                    })}
+                    name="email"
+                    placeholder="example@gmail.com"
+                    autoComplete="email"
+                    required
+                    tabIndex={0}
+                    aria-invalid={errors.email ? "true" : "false"}
+                    
+                   
+                    
+                  />
+                   {errors.email?.type === "required"
+                                                && <p role="alert">{errors.email.message}</p>}
                   </div>
 
-                  <div className="input-item mb-5">
-                    <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                      Country*
-                    </h6>
-                    <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                      <span className="text-[13px] text-qgraytwo">
-                        Select Country
-                      </span>
-                      <span>
-                        <svg
-                          width="11"
-                          height="7"
-                          viewBox="0 0 11 7"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.4 6.8L0 1.4L1.4 0L5.4 4L9.4 0L10.8 1.4L5.4 6.8Z"
-                            fill="#222222"
-                          />
-                        </svg>
-                      </span>
+
                     </div>
+
+                    <div className="input-com w-full h-full">
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Phone/ Mobile*
+                  </h6>
+                  <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                  <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="t" {...register("mobile_no", {
+                      
+                      required: "true"
+                    })}
+                  
+                    placeholder="0213 *********"
+                    aria-invalid={errors.mobile_no ? "true" : "false"}
+                    name="mobile_no"
+                   
+                    
+                  />
+                   {errors.mobile_no?.type === "required"
+                                                && <p role="alert">{errors.mobile_no.message}</p>}
                   </div>
 
+
+                    </div>
+                   
+                  </div>
+
+
                   <div className="input-item mb-5">
-                    <InputCom
+                  <div className="input-com w-full h-full">
+                  <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
+                    Address*
+                  </h6>
+                  <div className="input-wrapper border border-qgray-border w-full h-full overflow-hidden relative ">
+                  <input className="input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none h-[50px]"
+                    
+                    type="text" {...register("location", {
+                      
+                      required: "true"
+                    })}
+                  
+                    placeholder="Your address Here"
+                    aria-invalid={errors.location ? "true" : "false"}
+                    name="location"
+                   
+                    
+                  />
+                   {errors.mobile_no?.type === "required"
+                                                && <p role="alert">{errors.location.message}</p>}
+                  </div>
+
+
+                    </div>
+                    {/* <InputCom
                       placeholder="Your address Here"
                       label="Address*"
                       name="address"
                       type="text"
                       inputClasses="h-[50px]"
-                    />
+                    /> */}
                   </div>
-                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                    <div className="w-1/2">
-                      <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                        Town / City*
-                      </h6>
-                      <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                        <span className="text-[13px] text-qgraytwo">
-                          Dar es salaam
-                        </span>
-                        <span>
-                          <svg
-                            width="11"
-                            height="7"
-                            viewBox="0 0 11 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5.4 6.8L0 1.4L1.4 0L5.4 4L9.4 0L10.8 1.4L5.4 6.8Z"
-                              fill="#222222"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Postcode / ZIP*"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="00000"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  
                   <div className="forgot-password-area mb-7">
                     <div className="remember-checkbox flex items-center space-x-2.5">
                       <button
@@ -188,12 +253,13 @@ export default function Signup() {
                   <div className="signup-area flex justify-center">
                     <p className="text-base text-qgraytwo font-normal">
                       Alrady have an Account?
-                      <a href="/login" className="ml-2 text-qblack">
+                      <a href="/ingia" className="ml-2 text-qblack">
                         Log In
                       </a>
                     </p>
                   </div>
                 </div>
+                </form>
               </div>
             </div>
             <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center">
