@@ -45,9 +45,9 @@ const Header = ({className, drawerAction}) => {
             </a>
           </div> */}
           { currentUser ? 
-          <div className="become-seller-btn  w-[60px] h-[40px]" onClick={logout}>
+          <div className="become-seller-btn  relative  w-[60px] h-[40px]" onClick={logout}>
             
-            <div className="yellow-btn flex justify-center items-center cursor-pointer">
+            <div className="yellow-btn flex  cursor-pointer relative">
               
                 <span className="text-xs font-500">Log Out</span>
                 <span>
