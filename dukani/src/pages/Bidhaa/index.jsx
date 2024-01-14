@@ -12,6 +12,7 @@ import BreadcrumbCom from "../../components/BreadcrumbCom";
 import ProductsIterator from "../../components/Helpers/ProductsIterator";
 import Layout from "../../components/Layout";
 import BidhaaFilter from "./BidhaFilter";
+import ProductsIteratorTwo from "../../components/Helpers/ProductsIteratorTwo";
 
 
 export default function BidhaPage() {
@@ -140,7 +141,7 @@ export default function BidhaPage() {
                   /> */}
                 </div>
                 <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5 mb-[40px]">
-                  <ProductsIterator/>
+                  <ProductsIteratorTwo/>
                 </div>
               </div>
             </div>

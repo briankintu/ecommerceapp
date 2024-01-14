@@ -2,7 +2,7 @@
 import { useFrappeGetDocList } from 'frappe-react-sdk';
 import ProductCardStyleOne from './Cards/ProductCardStyleOne';
 
-const ProductsIterator = (props) => {
+const ProductsIteratorTwo = (props) => {
 
 //   const { datas = [], startLength, endLength,} = props;
 //   return (
@@ -40,7 +40,7 @@ const ProductsIterator = (props) => {
     return (
         <>
            
-          {data.slice(0,6)
+          {data.slice(6,15)
           .map(doc => (
             <div data-aos="fade-up" key={doc.name}>
             <ProductCardStyleOne key={doc.name} doc={doc} />
@@ -55,6 +55,6 @@ const ProductsIterator = (props) => {
   }
   
 
-export default ProductsIterator;
+export default ProductsIteratorTwo;
 
   
