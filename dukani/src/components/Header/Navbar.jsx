@@ -452,35 +452,56 @@ const Navbar = ({className}) => {
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Wires and Cables
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Arrestors
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Change Over
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Holders
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Lugs
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Switches
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Miscellanous Items
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Other Items
                                   </span>
                                 </a>
                               </li>
@@ -498,28 +519,42 @@ const Navbar = ({className}) => {
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Product type
+                                    Multi chargers
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Product type
+                                    Solar Fans
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Product type
+                                    Solar Freezers and Fridges
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Product type
+                                    Solar TV
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Water Heater
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Solar Batteries
                                   </span>
                                 </a>
                               </li>
@@ -529,7 +564,7 @@ const Navbar = ({className}) => {
                         <div>
                           <div className="category">
                             <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
-                              Services
+                              Solar Lights
                             </h1>
                           </div>
                           <div className="category-items">
@@ -537,36 +572,125 @@ const Navbar = ({className}) => {
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                    Service Offered
+                                    Solar Flood Lights
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Service Offered
+                                  Solar Lanterns
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Service Offered
+                                  Solar Street Lights
                                   </span>
                                 </a>
                               </li>
                               <li>
                                 <a href="#">
                                   <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                  Service Offered
+                                  
+                                  </span>
+                                </a>
+                              </li>
+                              <div className="category">
+                            <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                              Solar Systems
+                            </h1>
+                          </div>
+                          <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  Solar Kits
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  
+                                  </span>
+                                </a>
+                              </li>
+                              <div className="category">
+                            <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                              Water Pumps
+                            </h1>
+                          </div>
+                          <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  Water Pumps
                                   </span>
                                 </a>
                               </li>
                             </ul>
                           </div>
                         </div>
+                        <div>
+                          <div className="category">
+                            <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                              Solar Inverters and controllers
+                            </h1>
+                          </div>
+                          <div className="category-items">
+                            <ul className="flex flex-col space-y-2">
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    Solar Charge Controllers
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  Solar Inverters and controllers
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  
+                                  </span>
+                                </a>
+                              </li>
+                              <div className="category">
+                            <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                              Services
+                            </h1>
+                          </div>
+                              <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  Service Offered
+                                  </span>
+                                </a>
+                              </li>
+                              <div className="category">
+                            <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                              Solar Batteries
+                            </h1>
+                          </div>
+                          <li>
+                                <a href="#">
+                                  <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                  Solar Batteries
+                                  </span>
+                                </a>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
                         
                       </div>
+                      
                       
                     </div>
                   </div>
