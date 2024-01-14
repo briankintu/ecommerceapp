@@ -36,6 +36,7 @@ const ProductsIterator = (props) => {
   // Render child components with data
 
   if (data) {
+    console.log(data)
     
     return (
         <>
